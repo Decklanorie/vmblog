@@ -264,12 +264,12 @@ class _PostScreenState extends State<PostScreen> {
             ],
           )
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
+      floatingActionButton: widget.from != 'create'? FloatingActionButton(onPressed: (){
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => EditPostScreen(post: widget.post)),
         );
-      }, child: Text('Edit'),),
+      }, child: Text('Edit'),):null,
     ), onWillPop: ()async{
       if(widget.from == null){
         Navigator.pop(context);
